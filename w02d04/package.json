@@ -1,0 +1,15 @@
+{
+  "name": "w02d04",
+  "version": "1.0.0",
+  "description": "### To Do - [ ] Illustrate the \"callback waterfall\" (callback hell) problem - [ ] Introduction to Promises - [ ] Error handling with Promises (vs callbacks) - [ ] Parallelizing async things (Promise.all) - [ ] Creating our own Promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-promise": "^1.0.5"
+  }
+}
