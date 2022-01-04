@@ -56,7 +56,7 @@
 ### Student Suggestion: Food Delivery App
 We created an ERD for a fictional food delivery app:
 
-![Food Delivery ERD](https://andydlindsay-portfolio.s3.amazonaws.com/lighthouse/uber.png)
+![Food Delivery ERD](https://raw.githubusercontent.com/andydlindsay/nov22-2021/master/w05d02/ubereats.drawio.png)
 
 ### Useful Links
 * [Database Normalization](https://en.wikipedia.org/wiki/Database_normalization)
