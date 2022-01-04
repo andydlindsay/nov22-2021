@@ -1,86 +1,65 @@
 # W05D02 - Database Design
 
 ### To Do
-- [ ] Primary Keys/Foreign Keys
-- [ ] Naming Conventions
-- [ ] Data Types
-- [ ] Relationship Types
-- [ ] Design Concepts
-- [ ] Entity Relationship Diagrams
-- [ ] Student Suggestion ERD(s)
+- [x] Primary Keys/Foreign Keys
+- [x] Naming Conventions
+- [x] Data Types
+- [x] Relationship Types
+- [x] Design Concepts
+- [x] Entity Relationship Diagrams
+- [x] Student Suggestion ERD - food delivery app
 
-### Primary Keys and Foreign Keys
-* uniquely identify a particular record
-* has to be unique within the table
-* any data type can be used as a PK
-* PK are `id`
-* Foreign keys are the PK in a different table
-* FK has to be the same type as the PK
+### Primary Key
 
-GET /users
-GET /users/2
+- A way of uniquely identifying a particular record within a table 
+- Must be unique (within the table) and can never be null
+- The usual data type is auto-incrementing integer (`INTEGER` or `BIGINT`)
+- A Primary Key stored in another table is known as a `Foreign Key`
+- The Primary Key and Foreign Key **MUST** be the same data type
 
 ### Naming Conventions
-* snake_case for all table and field names
-* all table names are plural
-* FK = singular of the table name plus `_id` (`user_id`)
+
+- Table and field names are written in `snake_case`
+- Table names are always pluralized
+- The primary key for each table will simply be called `id`
+- A foreign key is made up of the singular of the primary keys table and the suffix `_id` (eg. `user_id` is the foreign key for the `id` field in the `users` table)
 
 ### Data Types
-* every field must have a data type assigned to it
 
-users
-id
-first_name
-last_name
-age
-username
-
-* not a big deal anymore, you'll just choose from 4-5 types
+- Each field in a table **must** have a data type defined for it
+- The data type tells the database how much room to set aside to store the value _and_ allows the database to perform type validation on data before insertion (to protect the data integrity of the table)
+- Choosing the perfect data type is less of a concern nowadays because memory is now comparably cheap
 
 ### Relationship Types
-* one-to-one - 1 record in the first table is related to only one record in the second
-* many-to-one/one-to-many - 1 record in the first table is related to one or more in the second
-* many-to-many - 1 or more records in the first table is related to one or more records in the second (need another table - join, junction, bridge)
 
-employees
-name
-username
-password
+- **One-to-One**: One record in the first table is related to one (and only one) record in the second table
+- **One-to-Many**: One record in the first table is related to one or more records in the second table
+- **Many-to-Many**: One or more records in the first table are related to one or more records in the second table
+
+- It could be argued that there is really only one relationship type: _One-to-Many_ as One-to-One's are extremely rare and Many-to-Many's are implemented using two _One-to-Many's_
 
 ### Design Concepts
-* required fields = think of how the record will be at initial creation time
-* default values - timestamp NOW(), active = true, on_sale = false
-* calculated fields - please NO, first_name last_name === full_name
-* try not to delete anything - soft delete
-* repeating values - alternative to ENUMs - pull repeated values out to a lookup table
 
-ok
-sad
-happy
+- Make fields required based on the records state upon initial creation (remember that additional data can be added to a record after it has been created)
+- Intelligent default values can be set for fields (such as the current timestamp for a `created_on` field)
+- Don't use calculated fields (a field that can be derived from one or more other fields, such as `full_name` is a combination of `first_name` and `last_name`)
+- Pull repeated values out to their own table and make reference to them with a foreign key
+- Try not to delete anything (use a boolean flag instead to mark a record as active or inactive)
+- Consider using a `type` field instead of using two (or more) tables to store very similar data (eg. create an `orders` table with an `order_type` field instead of a `purchase_orders` and a `sales_orders` table)
 
-cities
-Edmonton
-Calgary
-Edmonton
+### Entity Relationship Diagram (ERD)
 
-cities
-1 Edmonton
-2 Calgary
-3 Vancouver
-4 Regina
-5 Saskatoon
+- A visual depiction of the database tables and how they are related to each other
+- Extremely useful for reasoning about how the database should be structured
+- Can be created using pen and paper, a whiteboard, or using an online application
 
-Saskatoon
-Toon town
-S'toon
-Sakatoonn
+### Student Suggestion: Food Delivery App
+We created an ERD for a fictional food delivery app:
 
-users
+![Food Delivery ERD](https://andydlindsay-portfolio.s3.amazonaws.com/lighthouse/uber.png)
 
-friends
-user_id
-friend_id
-
-
-2022
-'22
+### Useful Links
+* [Database Normalization](https://en.wikipedia.org/wiki/Database_normalization)
+* [Postgres Data Types](http://www.postgresqltutorial.com/postgresql-data-types/)
+* [Relationship Types](http://etutorials.org/SQL/Database+design+for+mere+mortals/Part+II+The+Design+Process/Chapter+10.+Table+Relationships/Types+of+Relationships/)
+* [diagrams.net (online ERD)](https://www.diagrams.net/)
