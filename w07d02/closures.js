@@ -29,7 +29,3 @@ increment();
 increment();
 increment();
 increment();
-
-
-
-
