@@ -6,3 +6,5 @@
 * [BREAKOUT - W2 Exam Review](/breakout-w2-exam)
 * [W05D02 - Database Design](/w05d02)
 * [BREAKOUT - Express Router](/breakout-express-router)
+* [W07D02 - Component-Based UI w/ React](/w07d02)
+* [W07D04 - Data Fetching & Other Side Effects](/w07d04)
