@@ -46,13 +46,3 @@ const SideEffect = () => {
 };
 
 export default SideEffect;
-
-
-// const useEffect = (cb, arr) => {
-//   if (arr !== arr) {
-//     const returnVal = cb();
-//     if (typeof returnVal === 'function') {
-
-//     }
-//   }
-// };
