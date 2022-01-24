@@ -8,3 +8,4 @@
 * [BREAKOUT - Express Router](/breakout-express-router)
 * [W07D02 - Component-Based UI w/ React](/w07d02)
 * [W07D04 - Data Fetching & Other Side Effects](/w07d04)
+* [W08D02 - Unit & Integration Testing](/w08d02)
