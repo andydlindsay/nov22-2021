@@ -1,0 +1,9 @@
+<h1>All the locations for <%= @character.name %>!</h1>
+
+<%= link_to "Back to characters", characters_path %>
+
+<!-- <% @locations.each do |location| %>
+  <%= render 'location', location: location %>
+<% end %> -->
+
+<%= render @locations %>
