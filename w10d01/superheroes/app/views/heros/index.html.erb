@@ -1,0 +1,13 @@
+<h1>Heroes for <%= @power.power %></h1>
+
+<%= link_to "All the powers", powers_path %>
+
+<!-- <% @heros.each do |hero| %>
+  <div class="hero">
+    <h2>Name: <%= hero.name %></h2>
+    <h2>Suffix: <%= hero.suffix %></h2>
+    <h2>Prefix: <%= hero.prefix %></h2>
+  </div>
+<% end %> -->
+
+<%= render @heros %>

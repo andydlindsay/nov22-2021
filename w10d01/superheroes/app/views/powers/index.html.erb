@@ -1,0 +1,8 @@
+<h1>All the powers</h1>
+
+<% @powers.each do |power| %>
+  <div class="power">
+    <h2>Power: <%= power.power %></h2>
+    <%= link_to "Heroes", power_heros_path(power) %>
+  </div>
+<% end %>
